@@ -31,3 +31,8 @@ HoenyComb will be used for distributed tracing.
 
 [8] Rollbar Account
 Rollbar is a bug tracking tool for production application. It will help us capture uncaught errors, application crashes and slow response.
+
+![conceptual](https://github.com/Tai-Chi-Bui/aws-complete-project/assets/75408677/1ddb0dc7-f695-44bb-8603-3d26c68f6873)
+
+
+![logical](https://github.com/Tai-Chi-Bui/aws-complete-project/assets/75408677/9ff29aa7-c7cc-40a3-b2b3-26e666321ca0)
