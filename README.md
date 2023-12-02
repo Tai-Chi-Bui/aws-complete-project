@@ -43,3 +43,17 @@ Rollbar is a bug tracking tool for production application. It will help us captu
 ### Logical Diagram
 
 ![logical](https://github.com/Tai-Chi-Bui/aws-complete-project/assets/75408677/9ff29aa7-c7cc-40a3-b2b3-26e666321ca0)
+
+
+
+## Step 1: Create user in IAM Identity Center
+
+After you create a user and grant it permissions, you can use its credentials to access AWS resources from your IDE.
+
+## Step 2: Install AWS CLI and add user's credentials to its configuration
+
+The command to config credentials would look like this:
+export AWS_ACCESS_KEY_ID=""
+export AWS_SECRET_ACCESS_KEY=""
+export AWS_SESSION_TOKEN=""
+
