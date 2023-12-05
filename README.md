@@ -58,7 +58,63 @@ The command to config credentials would look like this:
 export AWS_ACCESS_KEY_ID=""
 export AWS_SECRET_ACCESS_KEY=""
 export AWS_SESSION_TOKEN=""
-
+export AWS_DEFAULT_REGION="us-east-1"
 ```
 
 To confirm the config is working, run: ```aws sts get-caller-identity```
+
+Note: after the session token expires, you have to get new one.
+
+If you want, you can tell Gitpod to remember these tokens so the next time we relaunch our workspace, we won't have to enter again (if the session token is still valid):
+
+```
+gp env AWS_ACCESS_KEY_ID=""
+gp env AWS_SECRET_ACCESS_KEY=""
+gp env AWS_DEFAULT_REGION="us-east-1"
+```
+
+
+
+## Step 3: use ```.gitpod.yml``` for gitpod to automatically install aws the next time you login
+
+```
+tasks:
+  - name: aws-cli
+    env:
+      AWS_CLI_AUTO_PROMPT: on-partial
+    init: |
+      cd /workspace
+      curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      unzip awscliv2.zip
+      sudo ./aws/install
+      cd $THEIA_WORKSPACE_ROOT
+```
+
+
+## Step 4: Setup billing, billing alarm and AWS budget
+
+### 4.1: Enable billing
+We need to turn on Billing Alerts to recieve alerts.
+Instruction: go to root account -> go to Billing Management Console -> choose 'Receive Billing Alerts' under 'Billing Preferences'.
+
+### 4.2: Create a billing alarm
+a) We need to create SNS topic, which will deliver us the message when we are overbilled.
+
+```
+aws sns create-topic --name <your topic name>
+```
+After we run this command, it will return a TopicARN, which will be used in our next command.
+
+We'll subscribe an email address to the SNS topic. So that when there are messages or notifications sent to the specified SNS topic, they will be delivered to the provided email address.
+
+```
+aws sns subscribe \
+    --topic-arn <TopicARN> \
+    --protocol email \
+    --notification-endpoint <your email>
+```
+
+After the command succeeds, you'll need to check your email and confirm the subscription.
+
+
+b) After we have our SNS topic, we can create our alarm with CloudWatch.
