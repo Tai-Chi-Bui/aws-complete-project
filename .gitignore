@@ -1,2 +1,2 @@
 # Ignore alarm_config.json to prevent accidental commit of REGION, ACCOUNT_ID, and SNS_TOPIC_NAME
-./aws/json/alarm_config.json
+alarm_config.json
