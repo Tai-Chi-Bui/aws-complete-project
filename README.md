@@ -118,3 +118,18 @@ After the command succeeds, you'll need to check your email and confirm the subs
 
 
 b) After we have our SNS topic, we can create our alarm with CloudWatch.
+- First, you need to create a json file, in this case: aws/json/alarm_config.json (remember to input your valid region, account id and sns name)
+- Second, you run this command: aws cloudwatch put-metric-alarm --cli-input-json file://<absolute path of the json file>
+
+
+### 4.3: Create a budget
+
+- First, you need to create json files, in this case: budtet.json and budget-notifications-with-subscribers.json
+- Second, you run this command:
+
+```
+aws budgets create-budget \
+    --account-id AccountID \
+    --budget file://<absolute path of budget.json> \
+    --notifications-with-subscribers file://<absolute path of budget-notifications-with-subscribers.json>
+```
