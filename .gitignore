@@ -1,0 +1,2 @@
+# Ignore alarm_config.json to prevent accidental commit of REGION, ACCOUNT_ID, and SNS_TOPIC_NAME
+.alarm_config
