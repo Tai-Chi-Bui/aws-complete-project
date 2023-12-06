@@ -1,6 +1,8 @@
 # aws-complete-project
 A realistic and complex AWS project that covers all aspects of a professional application.
 
+This project is based on the instructional series provided by Andrew Brown on the ExamPro YouTube channel
+
 
 ## Prerequisite Technologies
 
@@ -75,7 +77,7 @@ gp env AWS_DEFAULT_REGION="us-east-1"
 
 
 
-## Step 3: use ```.gitpod.yml``` for gitpod to automatically install aws the next time you login
+## Step 3: use ```.gitpod.yml``` for gitpod to automatically install aws the next time you launch Gitpod workspace
 
 ```
 tasks:
@@ -118,18 +120,18 @@ After the command succeeds, you'll need to check your email and confirm the subs
 
 
 b) After we have our SNS topic, we can create our alarm with CloudWatch.
-- First, you need to create a json file, in this case: aws/json/alarm_config.json (remember to input your valid region, account id and sns name)
-- Second, you run this command: aws cloudwatch put-metric-alarm --cli-input-json file://<absolute path of the json file>
+- First, you need to create a json file; specifically, ```aws/json/alarm_config.json``` in my codebase (remember to input your valid region, account id and sns name)
+- Second, you run this command: ```aws cloudwatch put-metric-alarm --cli-input-json file://<absolute path of the json file>```
 
 
 ### 4.3: Create a budget
 
-- First, you need to create json files, in this case: budtet.json and budget-notifications-with-subscribers.json
+- First, you need to create json config files; specifically, ```aws/json/budget.json``` and ```aws/json/budget-notifications-with-subscribers.json``` in my codebase.
 - Second, you run this command:
 
 ```
 aws budgets create-budget \
-    --account-id AccountID \
+    --account-id <AccountID> \
     --budget file://<absolute path of budget.json> \
     --notifications-with-subscribers file://<absolute path of budget-notifications-with-subscribers.json>
 ```
