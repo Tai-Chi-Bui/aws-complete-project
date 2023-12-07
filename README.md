@@ -140,6 +140,7 @@ aws budgets create-budget \
 - Activate virtual environment: ```source venv/bin/activate``` 
 - Install required dependencies: ```pip3 install -r requirements.txt```
 - Run the app: ```python3 -m flask run --host=0.0.0.0 --port=4567```
+- Append this to the URL to get back a json: ```/api/activities/home```
 - When you're done, you can run command ```deactivate``` to deactivate the virtual environment
 
 ## Step 6: Add ```Dockerfile``` to ```backend-flask``` and try running it.
