@@ -5,7 +5,7 @@ FROM python:3.10-slim-buster
 WORKDIR /backend-flask
 
 # Copy the requirements.txt file from the host to the container
-COPY requirements.txt requirements.txt
+COPY requirements.txt .
 
 # Install Python dependencies from requirements.txt
 RUN pip3 install -r requirements.txt
