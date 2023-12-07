@@ -170,3 +170,33 @@ CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0", "--port=4567"]
 
 ```docker run --rm -p 4567:4567 -it -e FRONTEND_URL='*' -e BACKEND_URL='*' backend-flask```
 
+
+## Step 7: Try running ```frontend-react-js``` on local
+- ```cd frontend-react-js```
+- ```npm install```
+- ```npm run start```
+
+
+## Step 8: Add ```Dockerfile``` to ```frontend-react-js``` and try running it.
+
+- Create a file here: ```frontend-react-js/Dockerfile```
+
+```
+FROM node:16.18
+
+ENV PORT=3000
+
+COPY . /frontend-react-js
+WORKDIR /frontend-react-js
+RUN npm install
+EXPOSE ${PORT}
+CMD ["npm", "start"]
+```
+
+- Build Image
+
+```docker build -t  frontend-react-js ./frontend-react-js```
+
+- Create and Run Container
+
+```docker run --rm -p 3000:3000 -it -e REACT_APP_BACKEND_URL="Backend API URL" frontend-react-js```
