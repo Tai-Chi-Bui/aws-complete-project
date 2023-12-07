@@ -45,7 +45,7 @@ services:
 networks: 
   internal-network:
     driver: bridge
-    name: cruddur
+    name: tai-network
 
 volumes:
   db:
