@@ -15,6 +15,8 @@ Note: we need to install Gitpod Chrome extension to have its Gipod button attach
 [2] Github Codespaces Account:
 Github Codespaces will be used as our alternative CDE in case we use up Gitpod's free tier.
 
+Note: Another popular alternative for Gitpod and Github Codespaces is AWS Cloud9.
+
 [3] AWS Account:
 AWS will be our Cloud Service Provider (CSPs).
 
