@@ -199,4 +199,4 @@ CMD ["npm", "start"]
 
 - Create and Run Container
 
-```docker run --rm -p 3000:3000 -it -e REACT_APP_BACKEND_URL="Backend API URL" frontend-react-js```
+```docker run --rm -p 3000:3000 -it -e REACT_APP_BACKEND_URL="https://4567-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}" frontend-react-js```
