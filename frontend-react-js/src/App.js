@@ -1,4 +1,3 @@
-
 import './App.css';
 
 import HomeFeedPage from './pages/HomeFeedPage';
@@ -10,49 +9,46 @@ import MessageGroupsPage from './pages/MessageGroupsPage';
 import MessageGroupPage from './pages/MessageGroupPage';
 import ConfirmationPage from './pages/ConfirmationPage';
 import React from 'react';
-import process from 'process';
-import {
-  createBrowserRouter,
-  RouterProvider
-} from "react-router-dom";
+import NotificationsFeedPage from './pages/NotificationsFeedPage';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <HomeFeedPage />
+    path: '/',
+    element: <HomeFeedPage />,
   },
   {
-    path: "/notifications",
-    element: <NotificationsFeedPage />
+    path: '/notifications',
+    element: <NotificationsFeedPage />,
   },
   {
-    path: "/@:handle",
-    element: <UserFeedPage />
+    path: '/@:handle',
+    element: <UserFeedPage />,
   },
   {
-    path: "/messages",
-    element: <MessageGroupsPage />
+    path: '/messages',
+    element: <MessageGroupsPage />,
   },
   {
-    path: "/messages/@:handle",
-    element: <MessageGroupPage />
+    path: '/messages/@:handle',
+    element: <MessageGroupPage />,
   },
   {
-    path: "/signup",
-    element: <SignupPage />
+    path: '/signup',
+    element: <SignupPage />,
   },
   {
-    path: "/signin",
-    element: <SigninPage />
+    path: '/signin',
+    element: <SigninPage />,
   },
   {
-    path: "/confirm",
-    element: <ConfirmationPage />
+    path: '/confirm',
+    element: <ConfirmationPage />,
   },
   {
-    path: "/forgot",
-    element: <RecoverPage />
-  }
+    path: '/forgot',
+    element: <RecoverPage />,
+  },
 ]);
 
 function App() {
@@ -64,5 +60,3 @@ function App() {
 }
 
 export default App;
-
-
