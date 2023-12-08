@@ -1,7 +1,7 @@
 # aws-complete-project
 A realistic and complex AWS project that covers all aspects of a professional application.
 
-This project is based on the instructional series provided by Andrew Brown on the ExamPro YouTube channel
+This project is based on the instructional series provided by ExamPro YouTube channel
 
 
 ## Prerequisite Technologies
