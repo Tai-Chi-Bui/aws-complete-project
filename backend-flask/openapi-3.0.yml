@@ -13,7 +13,7 @@ paths:
         - activities
       responses:
         '200':
-          description: Returns an array of activities"
+          description: Returns an array of activities
           content:
             application/json:
               schema:
@@ -148,7 +148,7 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Message'
-  /api/activities/notification:
+  /api/activities/notifications:
     get:
       description: 'Return a feed of activity for all of those that I follow'
       tags:
@@ -163,7 +163,6 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Activity'
-
 components:
   schemas:
     Activity:
@@ -174,10 +173,10 @@ components:
           example: 0056a369-4618-43a4-ad88-e7c371bf5582
         display_name:
           type: string
-          example: "Tai Bui"
+          example: "Andrew Brown"
         handle:
           type: string
-          example: "taibui"
+          example: "andrewbrown"
         message:
           type: string
           example: "Who likes pineapple on their pizza?"
@@ -207,7 +206,7 @@ components:
           example: 0056a369-4618-43a4-ad88-e7c371bf5582
         handle:
           type: string
-          example: "taibui"
+          example: "andrewbrown"
         message:
           type: string
           example: "Who likes pineapple on their pizza?"
@@ -232,10 +231,10 @@ components:
           example: 0056a369-4618-43a4-ad88-e7c371bf5582
         display_name:
           type: string
-          example: "Tai Bui"
+          example: "Andrew Brown"
         handle:
           type: string
-          example: "taibui"
+          example: "andrewbrown"
         message:
           type: string
           example: "Who likes pineapple on their pizza?"
