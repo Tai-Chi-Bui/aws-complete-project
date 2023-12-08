@@ -239,4 +239,6 @@ networks:
 
 When you have this ```docker-compose.yml```, you can run it with ```docker-compose up```
 
+**Important:** Due to the volume mapping ```./frontend-react-js:/frontend-react-js``` within the ```frontend-react-js``` service, it's crucial to install dependencies locally before running docker-compose. This is because the absence of node_modules locally overwrites the dependencies installed within the Docker image, preventing proper functioning.
+
 
