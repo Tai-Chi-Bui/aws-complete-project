@@ -1,0 +1,10 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+  min-height: 100vh;
+  padding: 2.5rem;
+  background-color: aquamarine;
+}
